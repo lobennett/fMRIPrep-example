@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -J fmriprep_ds000105
-#SBATCH --time=02:00:00
+#SBATCH --time=1-12:00:00
 #SBATCH -n 1
 #SBATCH --array 1
 #SBATCH --cpus-per-task=12
