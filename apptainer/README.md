@@ -20,8 +20,7 @@ cd "$SCRATCH/fMRIPrep-example/apptainer"
 ### Download the dataset
 
 ```bash
-chmod +x download.sh
-./download.sh
+chmod +x download.sh && ./download.sh
 ```
 
 ### Pull the fMRIPrep Apptainer image
