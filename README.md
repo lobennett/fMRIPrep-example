@@ -1,33 +1,21 @@
-# fMRIPrep 
+# fMRIPrep-example
 
-> This repository contains a demo for running fMRIPrep using Apptainer/Singularity.
-
-## What is fMRIPrep?
-
-fMRIPrep is a robust and open source tool for preprocessing of functional MRI data.
+> This repository contains a demo for running fMRIPrep using Apptainer/Singularity and fMRIPrep-Docker.
 
 ## Documentation
 
+### fMRIPrep
+
 - [fMRIPrep documentation](https://fmriprep.org/en/stable/index.html)
+- [fMRIPrep-Docker example](https://reproducibility.stanford.edu/fmriprep-tutorial-running-the-docker-image/)
 - [fMRIPrep GitHub](https://github.com/nipreps/fmriprep)
 - [fMRIPrep DockerHub](https://hub.docker.com/r/nipreps/fmriprep/tags)
 
-## Instructions
+### Quality control
 
-### Download the dataset
+- [Quality control](https://www.frontiersin.org/journals/neuroimaging/articles/10.3389/fnimg.2022.1073734/full)
 
-```bash
-cd data
-./download.sh
-```
+## Other helpful things
 
-### Pull the fMRIPrep Apptainer image
-
-```bash
-cd .apptainer
-sbatch pull.sbatch
-```
-
-### Run fMRIPrep
-1. Configure `setup_env.sh` with your paths. 
-2. Run `sbatch fmriprep.sbatch`
+- [Globus](https://www.globus.org/)
+- [Sherlock <-> Local](https://www.sherlock.stanford.edu/docs/storage/data-transfer/)

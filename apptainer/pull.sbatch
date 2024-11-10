@@ -16,12 +16,14 @@
 
 Name: pull.sbatch
 
-Description: This script pulls the fMRIPrep image into the .apptainer directory.
+Description: This script pulls the fMRIPrep image into your $SCRATCH/.apptainer directory.
 
-Usage from root directory: sbatch .apptainer/pull.sbatch
+Usage: sbatch pull.sbatch
 
 '
 
-cd "$(dirname "$0")"
+# Create $SCRATCH/.apptainer directory if it doesn't exist
+mkdir -p $SCRATCH/.apptainer
 
-apptainer pull fmriprep_24.1.0rc2.sif docker://nipreps/fmriprep:24.1.0rc2
+# Pull the fMRIPrep image from DockerHub
+apptainer pull $SCRATCH/.apptainer/fmriprep_24.1.0rc2.sif docker://nipreps/fmriprep:24.1.0rc2

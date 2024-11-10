@@ -1,5 +1,12 @@
 #!/bin/sh
+
+# Create the directory for the dataset, save data in that directory
+mkdir -p ds000105
+cd ds000105
+
 # -- Run this script to download the dataset from OpenNeuro. -- 
+# -- This script was taken from the OpenNeuro website. --
+# -- https://openneuro.org/datasets/ds000105/versions/3.0.0/download --
 curl --create-dirs https://openneuro.org/crn/datasets/ds000105/objects/c2cc02881cdb3914cf3c112c332bf503ccb87cb8 -o CHANGES
 curl --create-dirs https://openneuro.org/crn/datasets/ds000105/objects/cdea7302445e5b86f32b6648afd4d32ca0472c6d -o README
 curl --create-dirs https://openneuro.org/crn/datasets/ds000105/objects/10923bb8173c50a81aa897ed7d5e649548238b5a -o dataset_description.json

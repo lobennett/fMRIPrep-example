@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH -J fmriprep_ds000105
-#SBATCH --time=1-12:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH -n 1
 #SBATCH --array 1
-#SBATCH --cpus-per-task=12
+#SBATCH --cpus-per-task=16
 #SBATCH --mem-per-cpu=16G
 #SBATCH -p russpold,hns,normal,owners
 # Outputs ----------------------------------
@@ -41,7 +41,7 @@ APPTAINER_CMD="apptainer run --cleanenv -B $BIDS_DIR:/data -B ${TEMPLATEFLOW_HOS
 SUBJECT="sub-$SLURM_ARRAY_TASK_ID"
 
 # Compose the command line with flags for fMRIPrep
-cmd="$APPTAINER_CMD /data $DERIVS_DIR participant --participant-label $SUBJECT -w /work --nthreads 12 --mem_mb 192000 --output-spaces MNI152NLin2009cAsym:res-2 func anat --fs-license-file $FS_LICENSE --bids-filter-file $BIDS_FILTER_FILE --verbose"
+cmd="$APPTAINER_CMD /data $DERIVS_DIR participant --participant-label $SUBJECT -w /work --nthreads 16 --mem_mb 256000 --output-spaces MNI152NLin2009cAsym:res-2 func --fs-license-file $FS_LICENSE --bids-filter-file $BIDS_FILTER_FILE --skip_bids_validation --verbose"
 
 # Show and execute the command
 echo Running task ${SLURM_ARRAY_TASK_ID}
