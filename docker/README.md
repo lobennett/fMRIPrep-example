@@ -4,7 +4,7 @@
 
 ## Instructions
 
-### Create a directory for the project and clone the repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/lobennett/fMRIPrep-example.git ~/fMRIPrep-example && \
